@@ -1,4 +1,4 @@
-import { NavLink } from "react-router";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -15,12 +15,27 @@ const Header = () => {
         }}
       >
         <li>
-          <NavLink to="/" end>
+          <NavLink
+            to="/"
+            end
+            style={({ isActive }) => ({
+              color: isActive ? "red" : "white",
+              textDecoration: "none",
+            })}
+          >
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink to="/movies">Movies</NavLink>
+          <NavLink
+            to="/movies"
+            style={({ isActive }) => ({
+              color: isActive ? "red" : "white",
+              textDecoration: "none",
+            })}
+          >
+            Movies
+          </NavLink>
         </li>
       </ul>
     </nav>
